@@ -1,14 +1,3 @@
-"""This scheduler starts/stops EC2 instances using a JSON based schedule.
-Usage:
-  scheduler [options]
-  scheduler (-h | --help)
-  scheduler --version
-Options:
-  -c --config CONFIG     Use alternate configuration file [default: ./aws.cnf].
-  -h --help              Show this screen.
-  --version              Show version.
-"""
-
 from docopt import docopt
 from ConfigParser import SafeConfigParser
 from boto3.session import Session
@@ -85,7 +74,7 @@ def _get_desired_state(schedule):
     stop = schedule[current_week_day]['stop']
 
     state = 'stop'
-    if current_hour >= start and current_hour < stop:
+    if start <= current_hour < stop:
         state = 'start'
 
     print state
@@ -99,11 +88,6 @@ def _get_instance_ids(instances):
         instance_ids.append(instance.id)
 
     return instance_ids
-
-
-def run_cli():
-    args = docopt(__doc__, version='scheduler 1.0')
-    run(args)
 
 
 if __name__ == "__main__":
