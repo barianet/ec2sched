@@ -1,0 +1,33 @@
+{
+    "profiles": [
+        {
+            "name": "tp-remote-dbg",
+            "region": "us-east-1",
+            "schedule": {
+                "monday": {
+                    "start": 7,
+                    "stop": 16
+                },
+                "tuesday": {
+                    "start": 7,
+                    "stop": 16
+                },
+                "wednesday": {
+                    "start": 7,
+                    "stop": 16
+                },
+                "thursday": {
+                    "start": 7,
+                    "stop": 16
+                },
+                "friday": {
+                    "start": 7,
+                    "stop": 16
+                }
+            },
+            "instance_tags": [
+                "tp-remote-dbg"
+            ]
+        }
+    ]
+}

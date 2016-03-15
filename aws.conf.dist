@@ -1,0 +1,7 @@
+[aws_us]
+access_key = <your aws access key>
+secret_key = <your aws secret key>
+region = <region'd>
+
+[schedule]
+paths = ./schedule.json
